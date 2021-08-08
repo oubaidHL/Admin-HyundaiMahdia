@@ -1,0 +1,116 @@
+<clr-main-container  >
+  <div> 
+    <clr-header class="header header-4" >
+      <div class="branding ">
+          <img shape="vm-bug" height="40"  src="assets/img/HM-LOGO.png" alt="logo">
+          <span class="title">  &nbsp; Hyundai Mahdia</span>
+      </div>
+    </clr-header>
+    <div class="content-container">
+      <main class="content-area">
+        <h1 >List des commandes</h1>
+        <div class="btn-group btn-primary">
+          <button class="btn"(click)="addOrder()" >Ajouter une commande</button> 
+        </div>
+        
+        <!-- Modal Add or Edit-->
+        <app-add-edit
+            *ngIf="orderModalOpen"
+            [product] = "selectedProduct"
+            (finish)="handleFinish($event)"
+            ></app-add-edit>
+        <!-- End Modal Add or Edit-->
+        
+        <!-- Modal Delete-->
+        <app-delete-order
+          *ngIf="delete"
+          [order]="orderToBeDelete"
+          (cancel) = "handleCancelDelete()"
+          (confirm) = "handleConfirmDelete()"
+        ></app-delete-order>
+        <!-- End Modal Delete-->
+        
+        <clr-datagrid >
+          <clr-dg-column [style.width.px]="10"> ID</clr-dg-column>
+          <clr-dg-column [style.width.px]="10">ID d'utilisateur</clr-dg-column>
+          <clr-dg-column [style.width.px]="10" >ID Produit</clr-dg-column>
+          <clr-dg-column [style.width.px]="10">quantity</clr-dg-column>
+          <clr-dg-column [style.width.px]="10">Prix</clr-dg-column>
+          <clr-dg-column [style.width.px]="200">date de cammande</clr-dg-column>
+          <clr-dg-column [style.width.px]="100">Statut</clr-dg-column>
+          <clr-dg-column [style.width.px]="100" >Action</clr-dg-column>
+          
+        
+        
+          <clr-dg-row *clrDgItems="let order of orders" [formGroup]="statusForm" >
+        
+        
+            <!--End Actions-->
+            <clr-dg-cell>{{order.idOrder}}</clr-dg-cell>
+            <clr-dg-cell>{{order.idUser}}</clr-dg-cell>
+            <clr-dg-cell>{{order.idProduct}}</clr-dg-cell>
+            <clr-dg-cell>{{order.quantity}} In stock</clr-dg-cell>
+            <clr-dg-cell>{{order.price}} dt </clr-dg-cell>
+            <clr-dg-cell>{{order.createdAt}}</clr-dg-cell>
+            <clr-dg-cell>{{order.status}}</clr-dg-cell>
+            <clr-dg-cell>
+              <div class="btn-group btn-primary"  >
+                <button class="btn" [product]="selectedOrder">En traitement</button>&nbsp;&nbsp;
+                <button class="btn btn-success" [product]="selectedOrder">Expédié</button>&nbsp;&nbsp;
+                <button class="btn btn-danger"[product]="selectedOrder"(click)="onSubmit(order)" >annuler</button>
+            </div>
+            </clr-dg-cell>
+          </clr-dg-row>
+        
+          <clr-dg-footer>
+            <clr-dg-pagination #pagination [clrDgPageSize]="5">
+              <clr-dg-page-size [clrPageSizeOptions]="[5,10,20,50,100]">Commandes par page</clr-dg-page-size>
+              {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} sur {{pagination.totalItems}} Commandes
+            </clr-dg-pagination>
+          </clr-dg-footer>
+        </clr-datagrid>
+      </main>
+      <nav class="sidenav" [clr-nav-level]="2" >
+        <section class="sidenav-content">
+          
+          <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
+            <b> <i class="fas fa-tachometer-alt"></i>
+            Dashboard</b>
+          </a>
+          <a routerLink="/showusers" routerLinkActive="active" class="nav-link">
+           <b> <i class="fas fa-users"></i>
+            Utilisateurs</b>
+          </a>
+           <a  shape="shopping-cart" routerLink="/showproducts" routerLinkActive="active" class="nav-link">
+            <b><i class="fas fa-store-alt"></i>
+            Produits</b>
+          </a>
+          <a routerLink="/showcategorys" routerLinkActive="active"  class="nav-link">
+            <b> <i class="fas fa-tags"></i>
+             Categories</b>
+           </a>
+          <a routerLink="/showorders" routerLinkActive="active"  class="nav-link">
+           <b> <i class="fas fa-shopping-cart"></i>
+            Commandes</b>
+          </a>
+          <a routerLink="/showtestdrives" routerLinkActive="active" class="nav-link">
+           <b> <i class="fas fa-tools"></i>
+            Test Drive</b>
+           </a>
+           <hr>
+           <a class="dropdown open right-bottom" (click)="logout()" routerLinkActive="active" class="nav-link">
+            <b> <i class="fas fa-sign-out-alt"></i>
+             Deconnexion</b>
+            </a>
+        </section>
+      </nav>
+    </div>
+  </div>
+  </clr-main-container>
+  
+
+
+
+
+
+

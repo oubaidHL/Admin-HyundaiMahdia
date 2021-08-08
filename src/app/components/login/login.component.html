@@ -1,0 +1,27 @@
+<div class="login-wrapper" *ngIf="!isAuth">
+    <div class="login">
+      <section class="title">
+        <h3 class="welcome">Panneau d'administration</h3>
+        Hyundai Mahdia
+      </section>
+      <div class="login-group" [formGroup]="loginForm">
+        <clr-input-container>
+          <label class="clr-sr-only">Email</label>
+          <input formControlName="email" type="text" name="Email" clrInput placeholder="Email"  />
+        </clr-input-container>
+        <clr-password-container>
+          <label class="clr-sr-only">Mot de passe</label>
+          <input formControlName="password" type="password" name="password" clrPassword placeholder="Mot de passe"  />
+        </clr-password-container>
+        <clr-checkbox-wrapper>
+          <label>Remember me</label>
+          <input type="checkbox" name="rememberMe" clrCheckbox />
+        </clr-checkbox-wrapper>
+        <div class="error active" *ngIf="errorMessage">
+          Invalid user name or password {{errorMessage}}
+        </div>
+        <button (click)="onSubmit()" type="submit" class="btn btn-primary">NEXT</button>
+      </div>
+    </div>
+  </div>
+  

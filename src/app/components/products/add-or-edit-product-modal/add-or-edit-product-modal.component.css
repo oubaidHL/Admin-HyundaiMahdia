@@ -1,0 +1,13 @@
+.card.clickable.active {
+  box-shadow: 0 .5rem 0 0 green;
+  border: 5px solid green;
+}
+  .category clr-icon {
+    width: 85px;
+    height: 85px;
+    display: block;
+    margin: 0 auto;
+  }
+  .card-text {
+    text-align: center
+  }

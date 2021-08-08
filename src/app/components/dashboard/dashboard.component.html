@@ -1,0 +1,93 @@
+<clr-main-container  >
+    <div> 
+      <clr-header class="header header-4" >
+        <div class="branding ">
+            <img shape="vm-bug" height="40"  src="assets/img/HM-LOGO.png" alt="logo">
+            <span class="title">  &nbsp; Hyundai Mahdia</span>
+        </div>
+      </clr-header>
+      <div class="content-container">
+        <main class="content-area">
+         
+
+            <table id="datatable" style="border: 0;" >
+                <tr>
+                    <td width="100%">
+                        <a routerLink="/showusers">
+                        <div class="statistic">
+                            <div class="title">Totale d'utilisateurs</div>
+                            <div class="numbers">4</div>
+                        </div>
+                        </a>
+                        <a routerLink="/showproducts">
+                        <div class="statistic">
+                            <div class="title">Totale de commandes</div>
+                            <div class="numbers">15</div>
+                        </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%"> 
+                        <a routerLink="/showproducts">
+                        <div class="statistic" >
+                            <div class="title">Totale de produits</div>
+                            <div class="numbers">15</div>
+                        </div>
+                        </a>
+                        <a routerLink="/showtestdrives">
+                        <div class="statistic">
+                            <div class="title">Totale de demandes Test Drive</div>
+                            <div class="numbers">31</div>
+                        </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        
+
+        </main>
+        <nav class="sidenav" [clr-nav-level]="2" >
+          <section class="sidenav-content">
+            
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
+              <b> <i class="fas fa-tachometer-alt"></i>
+              Dashboard</b>
+            </a>
+            <a routerLink="/showusers" routerLinkActive="active" class="nav-link">
+             <b> <i class="fas fa-users"></i>
+              Utilisateurs</b>
+            </a>
+             <a  shape="shopping-cart" routerLink="/showproducts" routerLinkActive="active" class="nav-link">
+              <b><i class="fas fa-store-alt"></i>
+              Produits</b>
+            </a>
+            <a routerLink="/showcategorys" routerLinkActive="active"  class="nav-link">
+              <b> <i class="fas fa-tags"></i>
+               Categories</b>
+             </a>
+            <a routerLink="/showorders" routerLinkActive="active"  class="nav-link">
+             <b> <i class="fas fa-shopping-cart"></i>
+              Commandes</b>
+            </a>
+            <a routerLink="/showtestdrives" routerLinkActive="active" class="nav-link">
+             <b> <i class="fas fa-tools"></i>
+              Test Drive</b>
+             </a>
+             <hr>
+             <a class="dropdown open right-bottom" (click)="logout()" routerLinkActive="active" class="nav-link">
+              <b> <i class="fas fa-sign-out-alt"></i>
+               Deconnexion</b>
+              </a>
+          </section>
+        </nav>
+      </div>
+    </div>
+    </clr-main-container>
+    
+
+
+
+
+
+    

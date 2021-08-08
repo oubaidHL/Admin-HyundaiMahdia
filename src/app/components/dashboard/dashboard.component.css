@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,600');
+
+#datatable{
+	width:1136px;
+}
+
+#datatable td{
+	padding:10px;
+}
+
+.statistic{
+	float:left;
+	width:250px;
+	height:150px;
+	margin-right:25px;
+	text-align:center;
+	background-color:#eee;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	border:1px solid #ccc;
+	-webkit-box-shadow: 0px 10px 62px -25px rgba(0,0,0,0.7);
+-moz-box-shadow: 0px 10px 62px -25px rgba(0,0,0,0.7);
+box-shadow: 0px 10px 62px -25px rgba(0,0,0,0.7);
+}
+
+.title{
+	width:255px;
+	margin-top:-2px;
+	margin-left:-2px;
+	padding:10px 0;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	color: #ffffff;
+	font-family: 'Barlow Condensed', sans-serif;
+	text-transform:uppercase;
+	font-weight:500;
+	background-color:#134ca8;
+	-webkit-box-shadow: 0px 10px 51px -14px rgba(0,0,0,0.7);
+-moz-box-shadow: 0px 10px 51px -14px rgba(0,0,0,0.7);
+box-shadow: 0px 10px 51px -14px rgba(0,0,0,0.7);
+}
+
+.numbers{
+	width:250px;
+  height: 200px;
+	padding:20px 0px 0px 0px;
+	color: #102c58;
+	font-size:80px;
+	font-family: 'Barlow Condensed', sans-serif;
+}
+
+.statistic:hover .title{
+	background-color:#183e7a;
+	transition: 0.2s;
+}
+
+.statistic:hover .numbers{
+	color:#183e7a;
+	transition: 0.2s;
+}
